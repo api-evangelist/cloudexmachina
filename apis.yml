@@ -1,8 +1,16 @@
 aid: cloudexmachina
 name: Cloud Ex Machina
-description: 'Cloud Ex Machina is a company surfaced as a portfolio company of serena and added to the
-  API Evangelist network as a stub for enrichment. Sector: infrastructure. This profile is a lead awaiting
-  the enrichment pipeline.'
+description: 'Cloud ex Machina (CxM) builds Dex, an agentic AI teammate for cloud cost and governance
+  management. Dex continuously maps AWS, Azure, GCP and Kubernetes estates read-only and agentless,
+  infers resource ownership by keeping the cloud connected to the organization''s people and code,
+  investigates cost and governance findings, and delivers review-ready remediation — pull requests,
+  scripts and CLI instructions — to the engineers who can act, inside the tools they already use.
+  The platform integrates with GitHub, GitLab, Jira, Linear, Notion, ServiceNow, Slack and Microsoft
+  Teams, ingests non-cloud AI spend from Anthropic, and runs as a per-tenant SaaS with SAML 2.0 SSO.
+  Cloud ex Machina publishes no public REST API or machine-readable specification; its developer-facing
+  surface is cloud onboarding distributed as a Terraform Registry module, a CloudFormation template
+  and a GitHub Action.'
+image: https://www.cloudexmachina.io/hubfs/cxm_logo.svg
 url: https://raw.githubusercontent.com/api-evangelist/cloudexmachina/refs/heads/main/apis.yml
 x-type: company
 x-source: serena-portfolio
@@ -14,6 +22,14 @@ modified: '2026-08-17'
 tags:
 - Company
 - Infrastructure
+- Cloud
+- FinOps
+- Cloud Cost Optimization
+- Cloud Governance
+- AI Agents
+- Cloud Management
+- Terraform
+- Kubernetes
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -21,5 +37,72 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: TrustCenter
+  url: security/cloudexmachina-trust-center.yml
+- type: DomainSecurity
+  url: security/cloudexmachina-domain-security.yml
 - type: Website
   url: https://www.cloudexmachina.io/
+- type: Documentation
+  url: https://docs.cloudexmachina.io/
+- type: GettingStarted
+  url: https://docs.cloudexmachina.io/#getting-started
+- type: Blog
+  url: https://www.cloudexmachina.io/blog
+- type: BlogRSS
+  url: https://www.cloudexmachina.io/blog/rss.xml
+- type: GitHubOrganization
+  url: https://github.com/cxmlabs/
+- type: Login
+  url: https://app.cloudexmachina.io/
+- type: TermsOfService
+  url: https://www.cloudexmachina.io/website-terms-of-use
+- type: PrivacyPolicy
+  url: https://www.cloudexmachina.io/legal/privacy-policy
+- type: Compliance
+  url: https://trust.cloudexmachina.io/
+- type: LinkedIn
+  url: https://www.linkedin.com/company/cloudexmachina/
+- type: Product
+  url: https://www.cloudexmachina.io/product
+- type: Packages
+  url: packages/cloudexmachina-packages.yml
+- type: Authentication
+  url: authentication/cloudexmachina-authentication.yml
+- type: Conformance
+  url: conformance/cloudexmachina-conformance.yml
+- type: Lifecycle
+  url: lifecycle/cloudexmachina-lifecycle.yml
+- type: Plans
+  url: plans/cloudexmachina-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/cloudexmachina-rate-limits.yml
+- type: LLMsTxt
+  url: llms/cloudexmachina-llms.txt
+x-enrichment:
+  date: '2026-08-17'
+  status: minimal
+  artifacts_added: 10
+  pass: local-v1
+x-coverage:
+  state: none
+  reason: no-developer-program
+  detail: >-
+    Cloud ex Machina is a real software company that ships a per-tenant SaaS product (Dex) and
+    genuinely maintains public Docusaurus documentation, but it operates no developer program at
+    all — no API reference among the 23 pages in its docs sitemap, no api.cloudexmachina.io host
+    in DNS, no MCP server, no agent card, and no client SDK in any language registry; its only
+    developer-facing distributables are AWS onboarding IaC (a Terraform Registry module at v0.6.0,
+    a CloudFormation template, and a GitHub Action).
+  evidence:
+  - url: https://docs.cloudexmachina.io/sitemap.xml
+    status: 200
+  - url: https://api.cloudexmachina.io/openapi.json
+    status: 0
+  - url: https://app.cloudexmachina.io/openapi.json
+    status: 200
+  - url: https://www.cloudexmachina.io/.well-known/agent-card.json
+    status: 404
+  - url: https://registry.terraform.io/v1/modules/cxmlabs/cxm-integration/aws
+    status: 200
+  checked: '2026-08-17'

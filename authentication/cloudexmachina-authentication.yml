@@ -1,0 +1,75 @@
+generated: '2026-08-17'
+method: searched
+source: https://docs.cloudexmachina.io/setup/sso/okta
+scope: platform-sso
+api_authentication: none
+note: >-
+  IMPORTANT SCOPE NOTE — read before using this artifact. Cloud ex Machina publishes NO public API,
+  so there is no API authentication scheme to document: no OpenAPI securitySchemes, no API keys, no
+  bearer tokens, no OAuth authorization server, no personal access tokens. derive-authentication.py
+  was not run because there is no OpenAPI in this repo to derive from. What this artifact records is
+  the authentication Cloud ex Machina DOES publish and document: how a human operator authenticates
+  into their per-tenant web application. The API keys that appear in Cloud ex Machina's integration
+  docs are THIRD-PARTY credentials (Anthropic, GitLab, ServiceNow) that a customer supplies TO Cloud
+  ex Machina so it can call those vendors — they are not credentials Cloud ex Machina issues.
+tenancy:
+  model: per-tenant subdomain
+  app_url_pattern: https://<tenant_id>.cloudexmachina.io
+  auth_url_pattern: https://auth.<tenant_id>.cloudexmachina.io
+  shared_app_host: https://app.cloudexmachina.io
+schemes:
+- name: saml-sso
+  type: saml2
+  idp_documented: Okta
+  federation_broker: Amazon Cognito
+  source: https://docs.cloudexmachina.io/setup/sso/okta
+  details:
+    acs_url: https://auth.<tenant_id>.cloudexmachina.io/saml2/idpresponse
+    audience_uri: 'urn:amazon:cognito:sp:<cxm_cognito_pool_id>'
+    default_relay_state: https://<tenant_id>.cloudexmachina.io/cloud-explorer
+    name_id_format: Unspecified
+    response_signed: true
+    assertion_signed: true
+    assertion_encryption: unencrypted
+    signature_algorithm: RSA_SHA256
+    digest_algorithm: SHA256
+    single_logout: disabled
+    signed_request: disabled
+    authn_context_class_ref: PasswordProtectedTransport
+    force_authn_honored: true
+    username_format: email
+    attribute_statements: [given_name, last_name, email]
+  provisioning:
+    self_service: false
+    note: >-
+      SSO is not self-service. The setup guide instructs the customer to "share the Metadata URL
+      with CxM on Slack or email. We will enable the SSO for you as fast as we can." Cloud ex
+      Machina must also hand the customer the internal cxm_cognito_pool_id before the IdP app can
+      be configured, so onboarding is a human, vendor-mediated step.
+cloud_access:
+  model: read-only, agentless cross-account role assumption
+  aws:
+    mechanism: cross-account IAM role
+    provisioned_by:
+    - terraform module cxmlabs/cxm-integration/aws
+    - cloudformation template cxmlabs/cloudformation-aws-cxm-integration
+    source: https://docs.cloudexmachina.io/setup/csp-configuration/aws-setup
+  azure:
+    source: https://docs.cloudexmachina.io/setup/csp-configuration/azure-setup/overview
+  gcp:
+    source: https://docs.cloudexmachina.io/setup/csp-configuration/gcp-setup
+  kubernetes:
+    source: https://docs.cloudexmachina.io/setup/csp-configuration/k8s-setup
+outbound_credentials_collected:
+  note: >-
+    Credentials the customer gives Cloud ex Machina for third-party systems. Listed for
+    completeness — these belong to the named vendor, not to Cloud ex Machina.
+  entries:
+  - {provider: Anthropic, mechanism: analytics API key + API version header (default 2023-06-01)}
+  - {provider: Anthropic, mechanism: Administrator API key}
+  - {provider: ServiceNow, mechanism: OAuth 2.0 client credentials}
+  - {provider: GitHub, mechanism: OAuth app connect flow}
+  - {provider: GitLab, mechanism: OAuth connect flow + API base URL for self-hosted}
+  - {provider: Slack / Microsoft Teams, mechanism: OAuth connect flow}
+  - {provider: Jira / Linear / Notion, mechanism: OAuth connect flow}
+  integration_broker: Nango (named as a subprocessor for "Product integrations")

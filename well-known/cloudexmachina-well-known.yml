@@ -1,0 +1,71 @@
+generated: '2026-08-17'
+method: probed
+source: live GET of /.well-known/* on every Cloud ex Machina host
+result: no-documents
+note: >-
+  Every /.well-known/ path was probed on all four Cloud ex Machina hosts. Not one returned a real
+  document. www.cloudexmachina.io (HubSpot) answers a hard 404 on every path. The other three hosts
+  are single-page/static-site catch-alls that answer HTTP 200 with their own HTML shell for any
+  path — docs.cloudexmachina.io returns the same 15,197-byte Docusaurus shell,
+  app.cloudexmachina.io the same ~18,888-byte application shell, and trust.cloudexmachina.io the
+  same 216,776-byte Secureframe trust-page HTML. Those 200s are SOFT-200s, not documents, and are
+  recorded as such. Because nothing real was served, NO WellKnown, APICatalog or SecurityTxt
+  pointer is emitted in apis.yml — this file records a verified absence, not a presence.
+hosts:
+- host: https://www.cloudexmachina.io
+  behavior: hard-404
+  documents:
+  - {path: /.well-known/security.txt, status: 404}
+  - {path: /.well-known/openid-configuration, status: 404}
+  - {path: /.well-known/oauth-authorization-server, status: 404}
+  - {path: /.well-known/oauth-protected-resource, status: 404}
+  - {path: /.well-known/api-catalog, status: 404}
+  - {path: /.well-known/ai-plugin.json, status: 404}
+  - {path: /.well-known/agent-card.json, status: 404}
+  - {path: /.well-known/agent.json, status: 404}
+- host: https://docs.cloudexmachina.io
+  behavior: soft-200-html-shell
+  shell_bytes: 15197
+  documents:
+  - {path: /.well-known/security.txt, status: 200, document: false, content_type: text/html}
+  - {path: /.well-known/openid-configuration, status: 200, document: false, content_type: text/html}
+  - {path: /.well-known/oauth-authorization-server, status: 200, document: false, content_type: text/html}
+  - {path: /.well-known/oauth-protected-resource, status: 200, document: false, content_type: text/html}
+  - {path: /.well-known/api-catalog, status: 200, document: false, content_type: text/html}
+  - {path: /.well-known/ai-plugin.json, status: 200, document: false, content_type: text/html}
+  - {path: /.well-known/agent-card.json, status: 200, document: false, content_type: text/html}
+  - {path: /.well-known/agent.json, status: 200, document: false, content_type: text/html}
+- host: https://app.cloudexmachina.io
+  behavior: soft-200-html-shell
+  shell_bytes: 18888
+  documents:
+  - {path: /.well-known/security.txt, status: 200, document: false, content_type: text/html}
+  - {path: /.well-known/openid-configuration, status: 200, document: false, content_type: text/html}
+  - {path: /.well-known/oauth-authorization-server, status: 200, document: false, content_type: text/html}
+  - {path: /.well-known/oauth-protected-resource, status: 200, document: false, content_type: text/html}
+  - {path: /.well-known/api-catalog, status: 200, document: false, content_type: text/html}
+  - {path: /.well-known/ai-plugin.json, status: 200, document: false, content_type: text/html}
+  - {path: /.well-known/agent-card.json, status: 200, document: false, content_type: text/html}
+  - {path: /.well-known/agent.json, status: 200, document: false, content_type: text/html}
+- host: https://trust.cloudexmachina.io
+  behavior: soft-200-html-shell
+  shell_bytes: 216776
+  note: CNAME to cloud-ex-machina.secureframetrust.com — a hosted Secureframe trust page.
+  documents:
+  - {path: /.well-known/security.txt, status: 200, document: false, content_type: text/html}
+  - {path: /.well-known/openid-configuration, status: 200, document: false, content_type: text/html}
+  - {path: /.well-known/oauth-authorization-server, status: 200, document: false, content_type: text/html}
+  - {path: /.well-known/oauth-protected-resource, status: 200, document: false, content_type: text/html}
+  - {path: /.well-known/api-catalog, status: 200, document: false, content_type: text/html}
+  - {path: /.well-known/ai-plugin.json, status: 200, document: false, content_type: text/html}
+  - {path: /.well-known/agent-card.json, status: 200, document: false, content_type: text/html}
+  - {path: /.well-known/agent.json, status: 200, document: false, content_type: text/html}
+summary:
+  hosts_probed: 4
+  paths_probed: 32
+  real_documents: 0
+  hard_404: 8
+  soft_200_html: 24
+  security_txt: false
+  agent_card: false
+  api_catalog: false

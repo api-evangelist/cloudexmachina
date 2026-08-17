@@ -1,0 +1,40 @@
+generated: '2026-08-17'
+method: searched
+source: https://docs.cloudexmachina.io/ + https://github.com/cxmlabs/terraform-aws-cxm-integration
+note: >-
+  Cloud ex Machina publishes no API versioning policy, no deprecation policy, no SLA and no status
+  page, because it publishes no API. The only versioned thing it ships is the AWS onboarding
+  Terraform module, which follows semantic versioning with 22 tagged releases in the Terraform
+  Registry. status.cloudexmachina.io does not resolve; the Secureframe trust center lists an
+  "Uptime and Availability Monitoring" control but exposes no public status or uptime page.
+  Absences below are verified, not assumed — no StatusPage or Deprecation pointer is emitted.
+versioning:
+  api: null
+  scheme: null
+  note: no public API, therefore no API versioning scheme
+  onboarding_module:
+    scheme: semver
+    current: 0.6.0
+    released: '2026-08-07'
+    releases: 22
+    first_release: 0.1.0
+    registry: https://registry.terraform.io/modules/cxmlabs/cxm-integration/aws/latest
+deprecation:
+  policy_url: null
+  sunset_header: null
+  note: no deprecation or sunset policy published on the site or in the docs
+sla:
+  url: null
+  uptime_target: null
+  note: >-
+    No public SLA. The trust center documents an internal "Uptime and Availability Monitoring"
+    control but publishes no target figure or customer-facing commitment.
+status_page: null
+status_page_evidence:
+- {url: 'https://status.cloudexmachina.io/', status: 0, finding: host does not resolve (NXDOMAIN)}
+- {url: 'https://trust.cloudexmachina.io/', status: 200, finding: 'internal uptime-monitoring control listed; no public status page linked'}
+changelog: null
+changelog_evidence:
+- {url: 'https://www.cloudexmachina.io/changelog', status: 404}
+- {url: 'https://docs.cloudexmachina.io/sitemap.xml', status: 200, finding: no changelog or release-notes page among the 23 documented pages}
+deprecated_operations: []

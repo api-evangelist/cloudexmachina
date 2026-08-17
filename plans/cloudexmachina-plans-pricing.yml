@@ -1,0 +1,19 @@
+generated: '2026-08-17'
+method: searched
+source: https://www.cloudexmachina.io/
+plan_count: 0
+pricing_model: contact-sales
+note: >-
+  Cloud ex Machina publishes no pricing at all. https://www.cloudexmachina.io/pricing returns HTTP
+  404, and no pricing, plans, tiers or "how we charge" section appears anywhere on the marketing
+  site, the product page, or the docs site (all 23 pages in the docs sitemap were fetched and
+  searched). The only conversion path on the site is a "Book a demo" form, and the docs make the
+  same assumption — SSO enablement, tenant provisioning and the cxm_cognito_pool_id are all
+  handed over by Cloud ex Machina staff. This is an enterprise sales-gated product with no
+  published price, no free tier, and no self-service signup. Recorded as an honest zero.
+plans: []
+evidence:
+- {url: 'https://www.cloudexmachina.io/pricing', status: 404}
+- {url: 'https://www.cloudexmachina.io/', status: 200, finding: 'nav offers Product and "Book a demo" only — no pricing link'}
+- {url: 'https://www.cloudexmachina.io/product', status: 200, finding: no pricing section}
+- {url: 'https://docs.cloudexmachina.io/sitemap.xml', status: 200, finding: 23 pages, none about pricing or plans}

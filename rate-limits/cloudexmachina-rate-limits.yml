@@ -1,0 +1,15 @@
+generated: '2026-08-17'
+method: searched
+source: https://docs.cloudexmachina.io/
+limit_count: 0
+note: >-
+  No rate limits are published, and there is nothing for a rate limit to apply to: Cloud ex Machina
+  exposes no public API. All 23 pages of the docs sitemap were fetched and searched for rate limit,
+  quota, throttle, 429, Retry-After and RateLimit header language — zero hits. No response headers
+  could be observed either, because no callable API host exists (api.cloudexmachina.io does not
+  resolve in DNS). Recorded as an honest zero rather than omitted.
+rate_limits: []
+headers: []
+evidence:
+- {url: 'https://docs.cloudexmachina.io/sitemap.xml', status: 200, finding: '23 pages fetched; no rate-limit, quota or 429 documentation'}
+- {url: 'https://api.cloudexmachina.io/', status: 0, finding: 'host does not resolve (NXDOMAIN) — no API host to observe headers on'}

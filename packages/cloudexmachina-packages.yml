@@ -1,0 +1,77 @@
+generated: '2026-08-17'
+method: searched
+source: https://github.com/cxmlabs/ + https://registry.terraform.io/modules/cxmlabs/cxm-integration/aws
+note: >-
+  Cloud ex Machina publishes no public REST API, and therefore no client SDKs in any language
+  registry. Its first-party distributables are cloud-onboarding infrastructure-as-code, published
+  from the cxmlabs GitHub organization. npm, PyPI, RubyGems, crates.io, NuGet, Maven Central and
+  pkg.go.dev were searched for cloudexmachina / cxm / cxmlabs client libraries — none exist.
+registries_searched:
+- registry: npm
+  queries: [cloudexmachina, cxm-sdk, cxmlabs]
+  result: none
+- registry: terraform
+  queries: [cxm]
+  result: 1 first-party module
+- registry: pypi
+  queries: [cloudexmachina, cxm, toon-llm, terravision]
+  result: no first-party package
+- registry: rubygems
+  result: none
+- registry: crates.io
+  result: none
+- registry: nuget
+  result: none
+- registry: maven-central
+  result: none
+- registry: pkg.go.dev
+  result: none
+packages:
+- language: hcl
+  registry: terraform
+  name: cxmlabs/cxm-integration/aws
+  url: https://registry.terraform.io/modules/cxmlabs/cxm-integration/aws/latest
+  source: https://github.com/cxmlabs/terraform-aws-cxm-integration
+  install: 'module "cxm_integration" { source = "cxmlabs/cxm-integration/aws" }'
+  official: true
+  version: 0.6.0
+  published: '2026-08-07'
+  downloads: 1149
+  releases: 22
+  note: >-
+    Terraform module that provisions the read-only cross-account IAM role and billing/CUR data
+    access Cloud ex Machina needs to onboard an AWS account. Version read from the Terraform
+    Registry v1 modules metadata endpoint; 22 tagged releases from v0.1.0 to v0.6.0.
+- language: yaml
+  registry: github
+  name: cxmlabs/cloudformation-aws-cxm-integration
+  url: https://github.com/cxmlabs/cloudformation-aws-cxm-integration
+  install: deploy the published CloudFormation template into the target AWS account
+  official: true
+  version: null
+  published: null
+  note: >-
+    CloudFormation equivalent of the Terraform onboarding module, distributed only from the
+    GitHub repository. Checked for tags and releases via the GitHub API — the repository has
+    none, so there is no versioned artifact a consumer can pin. Last pushed 2026-08-14.
+- language: python
+  registry: github
+  name: cxmlabs/cxm_action
+  url: https://github.com/cxmlabs/cxm_action
+  install: 'uses: cxmlabs/cxm_action@main'
+  official: true
+  version: null
+  published: null
+  note: >-
+    First-party GitHub Action. Not published to the GitHub Marketplace and carries no git tags
+    or releases, so the only reference available to a consumer is a floating branch — a
+    workflow pinning @main cannot tell what it is getting. Last pushed 2025-11-26.
+excluded:
+- name: cxmlabs/terravision
+  reason: >-
+    Fork of patrickchugh/terravision (AGPL-3.0). The PyPI package `terravision` is authored by
+    Patrick Chugh (terravisionapp@gmail.com), not Cloud ex Machina. Not a first-party package.
+- name: cxmlabs/toon-llm
+  reason: >-
+    Fork of davidpirogov/toon-llm (MIT). The PyPI package `toon-llm` (1.0.0b6) lists David
+    Pirogov as author and davidpirogov/toon-llm as homepage. Not a first-party package.
