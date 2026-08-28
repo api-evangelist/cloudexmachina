@@ -10,6 +10,17 @@ description: 'Cloud ex Machina (CxM) builds Dex, an agentic AI teammate for clou
   Cloud ex Machina publishes no public REST API or machine-readable specification; its developer-facing
   surface is cloud onboarding distributed as a Terraform Registry module, a CloudFormation template
   and a GitHub Action.'
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 image: https://www.cloudexmachina.io/hubfs/cxm_logo.svg
 url: https://raw.githubusercontent.com/api-evangelist/cloudexmachina/refs/heads/main/apis.yml
 x-type: company
