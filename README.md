@@ -64,6 +64,100 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Cloud Ex Machina is a company surfaced as a portfolio company of serena and added to the API Evangelist network as a stub for enrichment. Sector: infrastructure. This profile is a lead awaiting the enrichment pipeline.
+Cloud ex Machina (CxM) builds Dex, an agentic AI teammate for cloud cost and governance management. Dex continuously maps AWS, Azure, GCP and Kubernetes estates read-only and agentless, infers resource ownership by keeping the cloud connected to the organization's people and code, investigates cost and governance findings, and delivers review-ready remediation — pull requests, scripts and CLI instructions — to the engineers who can act, inside the tools they already use. The platform integrates with GitHub, GitLab, Jira, Linear, Notion, ServiceNow, Slack and Microsoft Teams, ingests non-cloud AI spend from Anthropic, and runs as a per-tenant SaaS with SAML 2.0 SSO. Cloud ex Machina publishes no public REST API or machine-readable specification; its developer-facing surface is cloud onboarding distributed as a Terraform Registry module, a CloudFormation template and a GitHub Action.
 
-Source: portfolio company of [serena](https://github.com/api-evangelist/serena) — https://www.cloudexmachina.io/
+**Areas:** Company · Infrastructure · Cloud · FinOps · Cloud Cost Optimization · Cloud Governance · AI Agents · Cloud Management · Terraform · Kubernetes
+
+## Cloud Ex Machina on APIs.io
+
+Everything profiled for Cloud Ex Machina is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/cloudexmachina/](https://apis.io/providers/cloudexmachina/)** — or go straight to one of the APIs or properties below.
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### Security (3)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Cloudexmachina Authentication](https://apis.io/security/cloudexmachina/cloudexmachina-authentication/)
+- [Cloudexmachina Domain Security](https://apis.io/security/cloudexmachina/cloudexmachina-domain-security/)
+- [Cloudexmachina Trust Center](https://apis.io/security/cloudexmachina/cloudexmachina-trust-center/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Cloudexmachina Plans Pricing](https://apis.io/plans/cloudexmachina/cloudexmachina-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Cloudexmachina Rate Limits](https://apis.io/rate-limits/cloudexmachina/cloudexmachina-rate-limits/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.cloudexmachina.io/)
+- [Documentation](https://docs.cloudexmachina.io/)
+- [Getting started](https://docs.cloudexmachina.io/#getting-started)
+- [Blog](https://www.cloudexmachina.io/blog)
+- [Compliance](https://trust.cloudexmachina.io/)
+- [Terms of service](https://www.cloudexmachina.io/website-terms-of-use)
+- [Privacy policy](https://www.cloudexmachina.io/legal/privacy-policy)
+- [GitHub](https://github.com/cxmlabs/)
+
+## API Evangelist rating
+
+**Kin Score 18.7** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 48.2 |
+| Contract quality | 0.0 |
+| Contract governance | 18.2 |
+| Operational transparency | 2.6 |
+| Developer ergonomics | 14.3 |
+| Access clarity | 35.5 |
+
+**Agent readiness 5.0** — human-only
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 24.5** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/cloudexmachina/](https://apis.io/providers/cloudexmachina/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Cloud Ex Machina: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/cloudexmachina/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
